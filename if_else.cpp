@@ -19,7 +19,7 @@ using namespace std;
 
 }*/
 
-int main(){
+/* int main(){
     int a,b,c;
     int total_marks;
     float per;
@@ -50,5 +50,21 @@ int main(){
     }
 
     return 0;
-}
-    
+} */
+
+int main()
+{
+    int yr;
+    cout<<"Enter a year:";
+    cin>>yr;
+
+    if(yr%400==0 || (yr%4==0 && yr%100!=0)){
+
+        cout<<"The year is a leap year.";
+    }
+    else {
+        cout<<"The year is not a leap year";
+
+    }
+    return 0;
+}    
