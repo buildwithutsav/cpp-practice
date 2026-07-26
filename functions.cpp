@@ -20,7 +20,7 @@ int main(){
 
 }*/
 
-int factorial(int n){
+/* int factorial(int n){
     int i , f=1 ;
     for(i=1;i<=n;i++){
         f = f * i ;
@@ -36,4 +36,5 @@ int main(){
     cout<<"the factorial of "<<n<<" is "<<factorial(n);
 
     return 0;
-}
+}*/
+
