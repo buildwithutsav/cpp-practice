@@ -39,7 +39,7 @@ cout<<"Third Element: "<< *(ptr + 2) << endl;
 return 0;
 }*/
 
-int main(){
+/*int main(){
     int a,b;
 
     cout<<"Enter your First Value: ";
@@ -58,6 +58,39 @@ int main(){
     cout<<"After Swapping"<<endl;
     cout<<"First Swapping = "<<a<<endl;
     cout<<"Second Number = "<<b<<endl;
+
+    return 0;
+}*/
+
+
+
+int main() {
+
+    int n;
+
+    cout << "Enter the number of elements: ";
+    cin >> n;
+
+    vector<int> arr(n);
+
+    cout << "Enter the elements:\n";
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Pointer to the first element of the vector
+    int *ptr = arr.data();
+
+    int largest = *ptr;
+
+    for (int i = 1; i < n; i++) {
+        if (*(ptr + i) > largest) {
+            largest = *(ptr + i);
+        }
+    }
+
+    cout << "Largest Element = " << largest << endl;
 
     return 0;
 }
