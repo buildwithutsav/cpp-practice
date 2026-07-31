@@ -46,7 +46,7 @@ using namespace std;
     
 }*/
 
-int main(){
+/*int main(){
     string name;
     int i ;
 
@@ -62,4 +62,5 @@ int main(){
 
     return 0;
 
-}
+}*/
+
