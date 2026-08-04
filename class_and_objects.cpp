@@ -30,7 +30,7 @@ int main()
     return 0;
 }*/
 
-class rectangle{
+/*class rectangle{
 
     public:
 
@@ -62,7 +62,121 @@ int main(){
     r.area();
     
     return 0;
-}
+}*/
+
+
+
+    /*class employee{
+
+        public:
+
+        string name;
+        int age;
+        int salary;
+
+        void getdata(){
+            cout<<"Enter Name:"<<endl;
+            getline(cin,name);
+
+            cout<<"Enter Age:"<<endl;
+            cin>>age;
+
+            cout<<"Enter Salary:"<<endl;
+            cin>>salary;
+
+
+        }
+
+        void displaydata(){
+            cout<<"Name:"<<name<<endl;
+            cout<<"Age:"<<age<<endl;
+            cout<<"Salary:"<<salary<<endl;
+
+        }
+
+    };
+
+    int main(){
+
+        employee e1;
+        e1.getdata();
+        e1.displaydata();
+
+        return 0;
+    }*/
+
+    class BankAccount{
+
+        public:
+
+        string name;
+        int account_number;
+        double balance;
+
+        void getdata(){
+            cout<<"Enter Name:"<<endl;
+            getline(cin,name);
+
+            cout<<"Enter Account Number:"<<endl;
+            cin>>account_number;
+
+            cout<<"Enter Balance:"<<endl;
+            cin>>balance;
+
+
+        }
+
+        void deposit(){
+
+            double amount;
+            cout<<"Enter Amount to Deposit:"<<endl;
+            cin>>amount;
+
+            balance += amount;
+            cout << "Amount Deposited Successfully!" << endl;
+        }
+
+        void withdraw(){
+
+            double amount;
+            cout<<"Enter Amount to Withdraw:"<<endl;
+            cin>>amount;
+
+            if(amount > balance){
+                cout<<"Insufficient Balance"<<endl;
+            }
+            else{
+                balance -= amount;
+                cout<<"Withdrawal Successful"<<endl;
+            }
+            }
+        
+
+        void displaydata(){
+
+            cout<<"------Bank Account Details------"<<endl;
+            cout<<"Name             : "<<name<<endl;
+            cout<<"Account Number   : "<<account_number<<endl;
+            
+            cout<<"Current Balance  : "<<balance<<endl;
+
+        }
+
+    };
+
+
+        int main(){
+
+            BankAccount b1;
+            b1.getdata();
+            b1.deposit();
+            b1.withdraw();
+            b1.displaydata();
+
+
+            return 0;
+                }
+
     
     
 
