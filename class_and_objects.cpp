@@ -105,7 +105,7 @@ int main(){
         return 0;
     }*/
 
-    class BankAccount{
+    /*class BankAccount{
 
         public:
 
@@ -175,7 +175,80 @@ int main(){
 
 
             return 0;
-                }
+                }*/
+
+
+
+  class Book{
+    public:
+
+    int id;
+    string title;
+    string author;
+    double price;
+
+    void getdata(){
+
+        cout<<"Enter Book ID:"<<endl;
+        cin>>id;
+
+        cout<<"Enter Book Title:"<<endl;
+        getline(cin >> ws , title);
+
+        cout<<"Enter Book Author:"<<endl;
+        getline(cin >> ws , author);
+
+        cout<<"Enter Book Price:"<<endl;
+        cin>>price;
+
+
+    }
+
+    void addbook(){
+        cout<<"Book Added Successfully!"<<endl;
+    }
+
+    void displaydata(){
+
+        cout<<"\n------Book Details------"<<endl;
+        cout<<"Book ID     : "<<id<<endl;
+        cout<<"Book Title  : "<<title<<endl;
+        cout<<"Book Author : "<<author<<endl;
+        cout<<"Book Price  : "<<price<<endl;
+
+    }
+
+    void searchbook(int search_id){
+
+        if(search_id == id){
+            cout<<"\nBook Found!"<<endl;
+            displaydata();
+        }
+        else{
+            cout<<"\nBook Not Found!"<<endl;
+        }
+        }
+
+        
+    };
+
+    int main(){
+
+            Book b1;
+            b1.getdata();
+            b1.addbook();
+            b1.displaydata();
+
+            int search_id;
+            cout<<"\nEnter Book ID to Search:"<<endl;
+            cin>>search_id;
+
+            b1.searchbook(search_id);
+
+            return 0;
+        }
+
+        
 
     
     
