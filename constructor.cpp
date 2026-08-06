@@ -37,6 +37,8 @@ using namespace std;
 
 };
 
+
+
 int main(){
 
     Student s1("John Doe", 123);
@@ -76,7 +78,7 @@ int main(){
     return 0;
 }*/
 
-class Employee{
+/*class Employee{
 
     public:
 
@@ -110,4 +112,106 @@ int main(){
     e1.displaydata();
 
     return 0;
+}*/
+
+/*class Student{
+
+    public:
+
+    string name;
+    int rollno;
+
+    Student(){
+        name = "Eskimo";
+        rollno = 0;
+        cout<<"Default constructor called!"<<endl;
+    }
+
+
+
+    Student(string n , int r){
+
+        name = n;
+        rollno = r;
+
+        cout<<"Parameterized constructor called!"<<endl;
+
+
+    }
+
+    void displaydata(){
+
+        cout<<"Name: "<<name<<endl;
+        cout<<"Roll Number: "<<rollno<<endl;
+
+
+    }
+
+    void updateName(string newName){
+
+        name = newName;
+        cout<<"\nName updated successfully!"<<endl;
+
+    }
+
+
+};
+
+int main(){
+
+    Student s1;
+    Student s2("Utsav",235);
+
+    cout<<"\nStudent 1 Details: "<<endl;
+    s1.displaydata();
+
+    cout<<"\nStudent 2 Destails: "<<endl;
+    s2.displaydata();
+
+    
+
+    return 0;
+}*/
+
+class Book{
+
+    public:
+
+    string Name;
+    double price;
+
+    Book(string n , double p){
+        Name = n;
+        price = p;
+        cout<<"Parameterized constructor called! "<<endl;
+    }
+
+    Book(Book &obj){
+        Name = obj.Name;
+        price = obj.price;
+
+        cout<<"Copy constructor called! "<<endl;
+    }
+
+    void displaydata(){
+
+        cout<<"Book Name: "<<Name<<endl;
+        cout<<"Book Price: "<<price<<endl;
+    }
+};
+
+int main(){
+    Book b1("Atmoic Habits",235);
+
+    Book b2(b1);
+    
+    cout<<"\nBook 1 Details\n";
+    b1.displaydata();
+
+    cout<<"\nBook 2 Details\n";
+    b2.displaydata();
+
+    return 0;
 }
+
+
