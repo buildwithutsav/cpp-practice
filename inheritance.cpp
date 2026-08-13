@@ -53,7 +53,7 @@ int main(){
     
 }*/
 
-class Employee{
+/*class Employee{
     public:
     string name;
     int id;
@@ -101,5 +101,62 @@ int main(){
     m1.displaydata();
 
     return 0;
+}*/
+
+class person{
+    public:
+    string name;
+    int age;
+
+    person(string n , int a){
+        name = n;
+        age = a;
+
+        cout<<"Person Object Created Successfully!"<<endl;
+    }
+
+
+};
+
+class employee : public person{
+    public:
+    int id;
+    double salary;
+
+    employee(string n , int a , int i , double s) : person(n , a){
+        id = i;
+        salary = s;
+
+        cout<<"Employee Object Created Successfully!"<<endl;
+    }
+
+};
+
+class manager : public employee{
+    public:
+    string department;
+
+    manager(string n , int a , int i , double s , string d) : employee(n , a , i , s){
+        department = d;
+
+        cout<<"Manager Object Created Successfully!"<<endl;
+    }
+
+    void displaydata(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"Age: "<<age<<endl;
+        cout<<"ID: "<<id<<endl;
+        cout<<"Salary: "<<salary<<endl;
+        cout<<"Department: "<<department<<endl;
+    }
+};
+
+int main(){
+    
+    manager m1("Utsav" , 20 , 101 , 100000 , "IT");
+    m1.displaydata();
+
+    return 0;
 }
+
 
