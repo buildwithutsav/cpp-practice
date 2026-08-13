@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class person{
+/*class person{
     public :
     string name;
     int age;
@@ -51,4 +51,55 @@ int main(){
 
     return 0;
     
+}*/
+
+class Employee{
+    public:
+    string name;
+    int id;
+    double salary;
+
+    Employee(string n , int i , double s){
+
+        name = n;
+        id = i;
+        salary = s;
+
+        cout<<"Employee Object Created Successfully!"<<endl;
+    }
+
+    void getdata(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"ID: "<<id<<endl;
+        cout<<"Salary: "<<salary<<endl;
+        
+
+    }
+};
+
+class Manager : public Employee{
+
+    public:
+    string department;
+
+    Manager(string n , int i , double s , string d) : Employee(n , i , s){
+        department = d;
+        cout<<"Manager Object Created Successfully!"<<endl;
+    }
+
+    void displaydata(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"ID: "<<id<<endl;
+        cout<<"Salary: "<<salary<<endl;
+        cout<<"Department: "<<department<<endl;
+    }
+};
+
+int main(){
+    
+    Manager m1("Utsav" , 101 , 100000 , "IT");
+    m1.displaydata();
+
+    return 0;
 }
+
