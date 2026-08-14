@@ -215,8 +215,8 @@ int main(){
 
     return 0;
 }*/
-
-#include <iostream>
+/*
+include <iostream>
 using namespace std;
 
 class Person {
@@ -297,6 +297,72 @@ int main() {
     Result r1("Utsav", 20, 101, 5001, 89.5);
 
     r1.displayData();
+
+    return 0;
+*/
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+
+public:
+    string brand;
+    int speed;
+
+    Vehicle(string b, int s) {
+        brand = b;
+        speed = s;
+
+        cout << "Vehicle Constructor Called!" << endl;
+    }
+};
+
+
+class Car : public Vehicle {
+
+public:
+    int numberOfDoors;
+
+    Car(string b, int s, int doors)
+        : Vehicle(b, s) {
+
+        numberOfDoors = doors;
+
+        cout << "Car Constructor Called!" << endl;
+    }
+};
+
+
+class ElectricCar : public Car {
+
+public:
+    double batteryCapacity;
+
+    ElectricCar(string b, int s, int doors, double battery)
+        : Car(b, s, doors) {
+
+        batteryCapacity = battery;
+
+        cout << "ElectricCar Constructor Called!" << endl;
+    }
+
+    void displayData() {
+
+        cout << "\n------ ELECTRIC CAR DETAILS ------" << endl;
+
+        cout << "Brand            : " << brand << endl;
+        cout << "Speed            : " << speed << " km/h" << endl;
+        cout << "Number of Doors  : " << numberOfDoors << endl;
+        cout << "Battery Capacity : " << batteryCapacity << " kWh" << endl;
+    }
+};
+
+
+int main() {
+
+    ElectricCar e1("Tesla", 200, 4, 75);
+
+    e1.displayData();
 
     return 0;
 }
