@@ -159,7 +159,7 @@ int main(){
     return 0;
 }*/
 
-class student{
+/*class student{
     public:
     string name;
     int rollno;
@@ -175,7 +175,8 @@ class student{
 
 };
 
-class sports{
+class sports
+{
     public:
     string sportsname;
     int score;
@@ -211,6 +212,91 @@ int main(){
 
     result r1("Utsav" , 101 , "Basketball" , 100);
     r1.displaydata();
+
+    return 0;
+}*/
+
+#include <iostream>
+using namespace std;
+
+class Person {
+
+public:
+    string name;
+    int age;
+
+    Person(string n, int a) {
+        name = n;
+        age = a;
+
+        cout << "Person Constructor Called!" << endl;
+    }
+};
+
+
+class Student : virtual public Person {
+
+public:
+    int rollno;
+
+    Student(string n, int a, int r)
+        : Person(n, a) {
+
+        rollno = r;
+
+        cout << "Student Constructor Called!" << endl;
+    }
+};
+
+
+class Employee : virtual public Person {
+
+public:
+    int employeeID;
+
+    Employee(string n, int a, int id)
+        : Person(n, a) {
+
+        employeeID = id;
+
+        cout << "Employee Constructor Called!" << endl;
+    }
+};
+
+
+class Result : public Student, public Employee {
+
+public:
+    double marks;
+
+    Result(string n, int a, int r, int id, double m)
+        : Person(n, a),
+          Student(n, a, r),
+          Employee(n, a, id) {
+
+        marks = m;
+
+        cout << "Result Constructor Called!" << endl;
+    }
+
+    void displayData() {
+
+        cout << "\n------ RESULT DETAILS ------" << endl;
+
+        cout << "Name        : " << name << endl;
+        cout << "Age         : " << age << endl;
+        cout << "Roll Number : " << rollno << endl;
+        cout << "Employee ID : " << employeeID << endl;
+        cout << "Marks       : " << marks << endl;
+    }
+};
+
+
+int main() {
+
+    Result r1("Utsav", 20, 101, 5001, 89.5);
+
+    r1.displayData();
 
     return 0;
 }
