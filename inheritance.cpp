@@ -101,7 +101,7 @@ int main(){
     m1.displaydata();
 
     return 0;
-}*/
+}
 
 class person{
     public:
@@ -155,6 +155,62 @@ int main(){
     
     manager m1("Utsav" , 20 , 101 , 100000 , "IT");
     m1.displaydata();
+
+    return 0;
+}*/
+
+class student{
+    public:
+    string name;
+    int rollno;
+
+    student(string n , int r){
+
+        name = n;
+        rollno = r;
+
+        cout<<"Student Object Created Successfully!"<<endl;
+    }
+
+
+};
+
+class sports{
+    public:
+    string sportsname;
+    int score;
+
+    sports(string s , int sc) {
+
+        sportsname = s;
+        score = sc;
+
+        cout<<"Sports Object Created Successfully!"<<endl;
+    }
+};
+
+class result : public student , public sports{
+    public:
+    result(string n , int r , string s , int sc) : student(n , r) , sports(s,sc){
+
+        
+
+        cout<<"Result Object Created Successfully!"<<endl;
+    }
+
+    void displaydata(){
+        cout<<"Name: "  <<name<<endl;
+        cout<<"Roll Number: "<<rollno<<endl;
+        cout<<"Sports Name: "<<sportsname<<endl;
+        cout<<"Score: "<<score<<endl;
+
+    }
+};
+
+int main(){
+
+    result r1("Utsav" , 101 , "Basketball" , 100);
+    r1.displaydata();
 
     return 0;
 }
