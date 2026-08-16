@@ -515,7 +515,7 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 
@@ -551,6 +551,114 @@ int main() {
 
     cout << "Car Object: ";
     c.display();
+
+    return 0;
+}*/
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+
+protected:
+    string name;
+    int employeeID;
+
+public:
+
+    Employee(string n, int id) {
+        name = n;
+        employeeID = id;
+
+        cout << "Employee Constructor Called!" << endl;
+    }
+};
+
+
+class FullTimeEmployee : public Employee {
+
+private:
+    double basicSalary;
+    double HRA;
+    double DA;
+
+public:
+
+    FullTimeEmployee(string n, int id, double salary, double h, double d)
+        : Employee(n, id) {
+
+        basicSalary = salary;
+        HRA = h;
+        DA = d;
+
+        cout << "Full Time Employee Constructor Called!" << endl;
+    }
+
+    void display() {
+
+        double grossSalary = basicSalary + HRA + DA;
+
+        cout << "\n------ FULL TIME EMPLOYEE ------" << endl;
+        cout << "Name          : " << name << endl;
+        cout << "Employee ID   : " << employeeID << endl;
+        cout << "Basic Salary  : " << basicSalary << endl;
+        cout << "HRA           : " << HRA << endl;
+        cout << "DA            : " << DA << endl;
+        cout << "Gross Salary  : " << grossSalary << endl;
+    }
+};
+
+
+class PartTimeEmployee : public Employee {
+
+private:
+    int hoursWorked;
+    double hourlyRate;
+
+public:
+
+    PartTimeEmployee(string n, int id, int hours, double rate)
+        : Employee(n, id) {
+
+        hoursWorked = hours;
+        hourlyRate = rate;
+
+        cout << "Part Time Employee Constructor Called!" << endl;
+    }
+
+    void display() {
+
+        double salary = hoursWorked * hourlyRate;
+
+        cout << "\n------ PART TIME EMPLOYEE ------" << endl;
+        cout << "Name          : " << name << endl;
+        cout << "Employee ID   : " << employeeID << endl;
+        cout << "Hours Worked  : " << hoursWorked << endl;
+        cout << "Hourly Rate   : " << hourlyRate << endl;
+        cout << "Salary        : " << salary << endl;
+    }
+};
+
+
+int main() {
+
+    FullTimeEmployee e1(
+        "Utsav",
+        101,
+        60000,
+        10000,
+        5000
+    );
+
+    PartTimeEmployee e2(
+        "Rahul",
+        102,
+        80,
+        500
+    );
+
+    e1.display();
+    e2.display();
 
     return 0;
 }
