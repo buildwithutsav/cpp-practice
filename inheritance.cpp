@@ -300,7 +300,7 @@ int main() {
 
     return 0;
 */
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 class Vehicle {
@@ -363,6 +363,194 @@ int main() {
     ElectricCar e1("Tesla", 200, 4, 75);
 
     e1.displayData();
+
+    return 0;
+}*/
+
+/*#include <iostream>
+using namespace std;
+
+class Person {
+
+protected:
+    string name;
+    int age;
+
+public:
+
+    Person(string n, int a) {
+
+        name = n;
+        age = a;
+
+        cout << "Person Constructor Called!" << endl;
+    }
+};
+
+
+class Student : public Person {
+
+private:
+    int rollNo;
+    string course;
+
+public:
+
+    Student(string n, int a, int r, string c)
+        : Person(n, a) {
+
+        rollNo = r;
+        course = c;
+
+        cout << "Student Constructor Called!" << endl;
+    }
+
+    void display() {
+
+        // Directly accessing protected members of Person
+        cout << "\n------ STUDENT DETAILS ------" << endl;
+        cout << "Name     : " << name << endl;
+        cout << "Age      : " << age << endl;
+        cout << "Roll No  : " << rollNo << endl;
+        cout << "Course   : " << course << endl;
+    }
+};
+
+
+int main() {
+
+    Student s1("Utsav", 20, 235, "CSE");
+
+    s1.display();
+
+    return 0;
+}*/
+
+/*#include <iostream>
+using namespace std;
+
+
+class Person {
+
+protected:
+    string name;
+    int age;
+
+public:
+
+    Person(string n, int a)
+        : name(n), age(a) {
+
+        cout << "Person Constructor Called!" << endl;
+    }
+};
+
+
+class Employee : public Person {
+
+protected:
+    int employeeID;
+    double basicSalary;
+
+public:
+
+    Employee(string n, int a, int id, double salary)
+        : Person(n, a) {
+
+        employeeID = id;
+        basicSalary = salary;
+
+        cout << "Employee Constructor Called!" << endl;
+    }
+};
+
+
+class Manager : public Employee {
+
+private:
+    string department;
+    double bonus;
+
+public:
+
+    Manager(string n, int a, int id, double salary,
+            string dept, double b)
+        : Employee(n, a, id, salary) {
+
+        department = dept;
+        bonus = b;
+
+        cout << "Manager Constructor Called!" << endl;
+    }
+
+    void display() {
+
+        double totalSalary = basicSalary + bonus;
+
+        cout << "\n------ MANAGER DETAILS ------" << endl;
+        cout << "Name          : " << name << endl;
+        cout << "Age           : " << age << endl;
+        cout << "Employee ID   : " << employeeID << endl;
+        cout << "Basic Salary  : " << basicSalary << endl;
+        cout << "Department    : " << department << endl;
+        cout << "Bonus         : " << bonus << endl;
+        cout << "Total Salary  : " << totalSalary << endl;
+    }
+};
+
+
+int main() {
+
+    Manager m1(
+        "Utsav",
+        20,
+        101,
+        60000,
+        "IT",
+        15000
+    );
+
+    m1.display();
+
+    return 0;
+}*/
+
+#include <iostream>
+using namespace std;
+
+
+class Vehicle {
+
+public:
+
+    void display() {
+
+        cout << "This is a Vehicle" << endl;
+    }
+};
+
+
+class Car : public Vehicle {
+
+public:
+
+    void display() {
+
+        cout << "This is a Car" << endl;
+    }
+};
+
+
+int main() {
+
+    Vehicle v;
+    Car c;
+
+    cout << "Vehicle Object: ";
+    v.display();
+
+    cout << "Car Object: ";
+    c.display();
 
     return 0;
 }
