@@ -575,7 +575,7 @@ public:
 };
 
 
-class FullTimeEmployee : public Employee {
+/*class FullTimeEmployee : public Employee {
 
 private:
     double basicSalary;
@@ -661,6 +661,122 @@ int main() {
     e2.display();
 
     return 0;
-}
+}*/
 
+
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+
+protected:
+    int accountNumber;
+    string holderName;
+    double balance;
+
+public:
+
+    BankAccount(int accNo, string name, double bal) {
+
+        accountNumber = accNo;
+        holderName = name;
+        balance = bal;
+
+        cout << "Bank Account Constructor Called!" << endl;
+    }
+
+    void deposit(double amount) {
+
+        if (amount <= 0) {
+            cout << "Invalid Deposit Amount!" << endl;
+        }
+        else {
+            balance += amount;
+            cout << "Deposit Successful!" << endl;
+        }
+    }
+
+    void withdraw(double amount) {
+
+        if (amount <= 0) {
+            cout << "Invalid Withdrawal Amount!" << endl;
+        }
+        else if (amount > balance) {
+            cout << "Insufficient Balance!" << endl;
+        }
+        else {
+            balance -= amount;
+            cout << "Withdrawal Successful!" << endl;
+        }
+    }
+
+    void displayBalance() {
+
+        cout << "\n------ BANK ACCOUNT ------" << endl;
+        cout << "Account Number : " << accountNumber << endl;
+        cout << "Holder Name    : " << holderName << endl;
+        cout << "Balance        : " << balance << endl;
+    }
+};
+
+
+class SavingsAccount : public BankAccount {
+
+private:
+    double interestRate;
+
+public:
+
+    SavingsAccount(int accNo, string name, double bal, double rate)
+        : BankAccount(accNo, name, bal) {
+
+        interestRate = rate;
+
+        cout << "Savings Account Constructor Called!" << endl;
+    }
+
+    void calculateInterest() {
+
+        double interest = balance * interestRate / 100;
+
+        balance += interest;
+
+        cout << "Interest Added : " << interest << endl;
+    }
+
+    void displayAccount() {
+
+        displayBalance();
+
+        cout << "Interest Rate  : " << interestRate << "%" << endl;
+    }
+};
+
+
+int main() {
+
+    SavingsAccount s1(
+        1001,
+        "Utsav",
+        50000,
+        5
+    );
+
+    cout << "\nInitial Details:" << endl;
+    s1.displayAccount();
+
+    cout << "\nDepositing 10000..." << endl;
+    s1.deposit(10000);
+
+    cout << "\nWithdrawing 5000..." << endl;
+    s1.withdraw(5000);
+
+    cout << "\nCalculating Interest..." << endl;
+    s1.calculateInterest();
+
+    cout << "\nFinal Details:" << endl;
+    s1.displayAccount();
+
+    return 0;
+}
 
