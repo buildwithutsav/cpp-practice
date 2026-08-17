@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 
 /*class Calculator {
 public:
@@ -26,7 +26,7 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 class Shape {
@@ -68,6 +68,69 @@ int main() {
 
     ptr = &c;
     ptr->area();
+
+    return 0;
+}*/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Employee {
+public:
+    virtual void calculateSalary() {
+        cout << "Employee salary" << endl;
+    }
+
+    virtual ~Employee() {}
+};
+
+class FullTimeEmployee : public Employee {
+public:
+    void calculateSalary() override {
+        int monthlySalary = 50000;
+
+        cout << "Full-Time Employee Salary: ₹"
+             << monthlySalary << endl;
+    }
+};
+
+class PartTimeEmployee : public Employee {
+public:
+    void calculateSalary() override {
+        int hours = 80;
+        int rate = 300;
+
+        cout << "Part-Time Employee Salary: ₹"
+             << hours * rate << endl;
+    }
+};
+
+class Intern : public Employee {
+public:
+    void calculateSalary() override {
+        int stipend = 15000;
+
+        cout << "Intern Stipend: ₹"
+             << stipend << endl;
+    }
+};
+
+int main() {
+
+    vector<Employee*> employees;
+
+    FullTimeEmployee fullTime;
+    PartTimeEmployee partTime;
+    Intern intern;
+
+    employees.push_back(&fullTime);
+    employees.push_back(&partTime);
+    employees.push_back(&intern);
+
+    for (Employee* emp : employees) {
+        emp->calculateSalary();
+    }
 
     return 0;
 }
