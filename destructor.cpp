@@ -32,7 +32,7 @@ int main(){
 }*/
 
 //CONSTRUCTOR AND DESTRUCTOR
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 class employee{
@@ -65,6 +65,107 @@ int main(){
 
     employee e1("Utsav", 235 , 100000);
     e1.display();
+
+    return 0;
+}*/
+
+/*//MULTIPLE OBJECTS 
+#include <iostream>
+using namespace std;
+
+class book{
+    public:
+    string bookname;
+    double price;
+
+    book(string b , double p){
+
+        bookname = b;
+        price = p;
+
+        cout<<"Constructor: "<<bookname<<endl;
+    }
+
+    ~book(){
+
+        cout<<"Destructor: "<<bookname<<endl;
+    }
+};
+
+int main(){
+
+    book b1("c++", 500);
+    book b2("java", 600);
+    book b3("python", 700);
+
+    return 0;
+}*/
+
+//DESTRUCTOR WITH SCOPE
+/*#include <iostream>
+using namespace std;
+
+class demo{
+    public :
+
+    demo(){
+        cout<<"object created!"<<endl;
+    }
+
+    ~demo(){
+        cout<<"object destroyed!"<<endl;
+    }
+};
+
+int main(){
+    demo d1;
+    {
+        demo d2;
+    }
+    demo d3;
+
+    return 0;
+}*/
+
+//DESTRUCTOR WITH DYNAMIC MEMORY
+#include <iostream>
+using namespace std;
+
+class Array{
+
+    private:
+    int *arr;
+    int size;
+
+    public:
+    Array(int s){
+        size = s;
+        arr = new int[size];
+        cout<<"Memory allocated!"<<endl;
+        cout << "Enter "<<size << " elements: "<<endl;
+
+        for (int i = 0; i < size; i++){
+            cin>>arr[i];
+        }
+    }
+
+    void display(){
+        cout<<"array elements: ";
+        for (int i = 0; i < size; i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+
+    ~Array(){
+        delete[]arr;
+        cout<<"Memory deallocated!"<<endl;
+    }
+};
+
+int main(){
+    Array a1(5);
+    a1.display();
 
     return 0;
 }
