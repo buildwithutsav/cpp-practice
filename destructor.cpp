@@ -170,7 +170,7 @@ int main(){
     return 0;
 }*/
 
-//DESTRUCTOR WITH INHERITANCE
+/*//DESTRUCTOR WITH INHERITANCE
 #include <iostream>
 using namespace std;
 
@@ -199,6 +199,50 @@ class student : public person{
 
 int main(){
     student s1;
+    return 0;
+}*/
+
+//MULTIPLE INHERITANCE + DESTRUCTORS
+#include <iostream>
+using namespace std;
+
+class student {
+    public:
+    student(){
+        cout<<"student constructor called!"<<endl;
+    }
+    ~student(){
+        cout<<"student destructor called!"<<endl;
+    }
+};
+
+class sports{
+    public:
+    sports(){
+        cout<<"sports constructor called!"<<endl;
+    }
+
+    ~sports(){
+        cout<<"sports destructor called!"<<endl;
+
+    }
+
+};
+
+class result:public student,public sports{
+    public:
+    result(){
+        cout<<"result constructor called!"<<endl;
+    }
+
+    ~result(){
+        cout<<"result destructor called!"<<endl;
+    }
+
+};
+
+int main(){
+    result r1;
     return 0;
 }
 
