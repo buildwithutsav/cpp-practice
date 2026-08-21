@@ -127,7 +127,7 @@ int main(){
     return 0;
 }*/
 
-//DESTRUCTOR WITH DYNAMIC MEMORY
+/*//DESTRUCTOR WITH DYNAMIC MEMORY
 #include <iostream>
 using namespace std;
 
@@ -168,4 +168,37 @@ int main(){
     a1.display();
 
     return 0;
+}*/
+
+//DESTRUCTOR WITH INHERITANCE
+#include <iostream>
+using namespace std;
+
+class person{
+    public:
+
+    person(){
+        cout<<"person constructor called!"<<endl;
+
+    }
+
+    ~person(){
+        cout<<"person destructor called!"<<endl;
+    }
+};
+
+class student : public person{
+    public:
+    student(){
+        cout<<"student constructor called!"<<endl;
+    }
+    ~student(){
+        cout<<"student destructor called!"<<endl;
+    }
+};
+
+int main(){
+    student s1;
+    return 0;
 }
+
